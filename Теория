@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char word[] = "programming";
+    char letter = 'm';
+    int index = -1; // Инициализируем index значением -1, на случай если символ не будет найден
+    
+    int word_size = sizeof(word) / sizeof(word[0]);
+    for (int i = 0; i < word_size; i++) {
+        if (word[i] == letter) {
+            index = i;
+            break; // Выходим из цикла после нахождения первого совпадения
+        }
+    }
+
+    if (index != -1) {
+        printf("Буква '%c' находится на позиции %d\n", letter, index);
+    } else {
+        printf("Буква '%c' не найдена\n", letter);
+    }
+
+    return 0;
+}
